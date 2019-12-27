@@ -1,5 +1,7 @@
 import React from 'react';
 import GifContainer from '../components/GifContainer';
+import GifSearch from '../components/GifSearch';
+
 const API_KEY = `${process.env.REACT_APP_GIPHY_API_KEY}`;
 
 class GifsIndex extends React.Component {
@@ -24,13 +26,26 @@ class GifsIndex extends React.Component {
 			);
 	};
 
+	handleSubmit = (e) => {
+		e.preventDefault();
+
+		this.getGifs(this.state.searchterm);
+	};
+
+	handleChange = (e) => {
+		this.setState({
+			searchterm: e.target.value
+		});
+	};
+
 	componentDidMount() {
-		this.getGifs('crushing it');
+		// this.getGifs('happiness');
 	}
 
 	render() {
 		return (
 			<>
+				<GifSearch query={this.handleSubmit} inputValue={this.handleChange} />
 				<GifContainer gifs={this.state.gifs} />
 			</>
 		);

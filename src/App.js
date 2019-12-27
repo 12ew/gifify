@@ -5,7 +5,7 @@ import GifsIndex from './utilities/GifsIndex';
 function App() {
 	return (
 		<div>
-			Welcome to Gifify
+			<h1 className='welcome'>Gifify</h1>
 			<GifsIndex />
 		</div>
 	);
