@@ -1,3 +1,23 @@
-.App {
+#root {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 	text-align: center;
+	background-color: rgb(240, 240, 240);
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+.gifItem {
+	margin: 10px;
+	flex-wrap: wrap;
+}
+
+.gifsMasonry {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
 }

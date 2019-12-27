@@ -1,4 +1,5 @@
 import React from 'react';
+import GifContainer from '../components/GifContainer';
 const API_KEY = `${process.env.REACT_APP_GIPHY_API_KEY}`;
 
 class GifsIndex extends React.Component {
@@ -28,7 +29,11 @@ class GifsIndex extends React.Component {
 	}
 
 	render() {
-		return <></>;
+		return (
+			<>
+				<GifContainer gifs={this.state.gifs} />
+			</>
+		);
 	}
 }
 
