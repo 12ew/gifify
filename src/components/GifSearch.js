@@ -6,12 +6,13 @@ class GifSearch extends React.Component {
 	}
 
 	render() {
+		const { query, inputValue } = this.props;
 		return (
 			<div className='searchBar'>
-				<form onSubmit={this.props.query}>
+				<form onSubmit={query}>
 					<input
 						className='formInput'
-						onChange={this.props.inputValue}
+						onChange={inputValue}
 						type='text'
 						name='name'
 						placeholder='Search Gifs'

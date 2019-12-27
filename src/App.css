@@ -5,6 +5,7 @@
 	text-align: center;
 	overflow: hidden;
 	background-color: #000000;
+	color: #fff;
 }
 
 html {
@@ -14,9 +15,9 @@ html {
 .welcome {
 	color: #9933fc;
 }
+
 .gifItem {
 	margin: 10px;
-	flex-wrap: wrap;
 }
 
 .gifsMasonry {
@@ -26,12 +27,11 @@ html {
 	align-items: center;
 	padding-bottom: 20px;
 }
+
 form {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	justify-self: center;
-	align-self: center;
 	margin: 30px 0 40px;
 }
 
@@ -41,7 +41,8 @@ form {
 	height: 30px;
 	outline: none;
 	border: none;
-	padding: 5px;
+	padding: 5px 10px;
+	font-size: 16px;
 }
 
 .formButton {
@@ -52,4 +53,8 @@ form {
 	height: 40px;
 	outline: none;
 	border: 0;
+}
+
+.errorMsg {
+	padding-bottom: 20px;
 }

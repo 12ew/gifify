@@ -9,7 +9,10 @@ class GifsIndex extends React.Component {
 		super(props);
 		this.state = {
 			searchTerm: '',
-			gifs: []
+			gifs: [],
+			isLoading: false,
+			error: null,
+			noResults: true
 		};
 	}
 
@@ -18,35 +21,47 @@ class GifsIndex extends React.Component {
 		fetch(
 			`http://api.giphy.com/v1/gifs/search?q=${searchTerm}&api_key=${API_KEY}&limit=${100}`
 		)
-			.then((resp) => resp.json())
+			.then((resp) => {
+				if (resp.ok) {
+					return resp.json();
+				} else {
+					throw new Error('Something went wrong ...');
+				}
+			})
 			.then((resp) =>
 				this.setState({
-					gifs: resp.data
+					gifs: resp.data,
+					isLoading: false,
+					noResults: false
 				})
-			);
+			)
+			.catch((error) => this.setState({ error, isLoading: false }));
 	};
 
 	handleSubmit = (e) => {
 		e.preventDefault();
 
-		this.getGifs(this.state.searchterm);
+		this.getGifs(this.state.searchTerm);
 	};
 
 	handleChange = (e) => {
 		this.setState({
-			searchterm: e.target.value
+			searchTerm: e.target.value
 		});
 	};
 
-	componentDidMount() {
-		// this.getGifs('happiness');
-	}
-
 	render() {
+		const { gifs, isLoading, error, searchTerm, noResults } = this.state;
 		return (
 			<>
 				<GifSearch query={this.handleSubmit} inputValue={this.handleChange} />
-				<GifContainer gifs={this.state.gifs} />
+				<GifContainer
+					gifs={gifs}
+					isLoading={isLoading}
+					error={error}
+					searchTerm={searchTerm}
+					noResults={noResults}
+				/>
 			</>
 		);
 	}
