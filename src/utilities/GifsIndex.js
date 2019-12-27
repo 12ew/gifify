@@ -2,7 +2,8 @@ import React from 'react';
 import GifContainer from '../components/GifContainer';
 import GifSearch from '../components/GifSearch';
 
-const API_KEY = `${process.env.REACT_APP_GIPHY_API_KEY}`;
+// const API_KEY = `${process.env.REACT_APP_GIPHY_API_KEY}`;
+const API_KEY = `dc6zaTOxFJmzC`;
 
 class GifsIndex extends React.Component {
 	constructor(props) {
