@@ -14,7 +14,7 @@ const GifContainer = (props) => {
 	if (!noResults & (gifs.length === 0)) {
 		return (
 			<p className='errorMsg'>
-				That search term yielded no results, please try again :){' '}
+				That search term yielded no results, please try again :)
 			</p>
 		);
 	}
