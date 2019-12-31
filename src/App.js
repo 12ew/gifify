@@ -28,6 +28,7 @@ class App extends React.Component {
 				})
 			)
 			.catch((error) => this.setState({ error, isLoading: false }));
+		this.setState({ isLoading: true });
 	};
 
 	handleChange = (e) => {
