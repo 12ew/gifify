@@ -21,8 +21,12 @@ const GifContainer = (props) => {
 
 	const gifsList = gifs.map((gif) => {
 		return (
-			<div className='gifItem' key={gif.id}>
-				<img src={gif.images.fixed_width.url} alt='gif' />
+			<div className='gifItemContainer' key={gif.id}>
+				<img
+					src={gif.images.fixed_width.url}
+					alt='gif'
+					className='gifItemImage'
+				/>
 			</div>
 		);
 	});

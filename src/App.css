@@ -16,8 +16,16 @@ html {
 	color: #9933fc;
 }
 
-.gifItem {
-	margin: 10px;
+.gifItemContainer {
+	width: 80%;
+	height: 200px;
+	text-align: center;
+	padding: 10px;
+}
+.gifItemImage {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
 }
 
 .gifsMasonry {
@@ -60,8 +68,11 @@ form {
 	padding-bottom: 20px;
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 500px) {
 	.errorMsg {
 		font-size: 16px;
+	}
+	.gifItemContainer {
+		width: auto;
 	}
 }
